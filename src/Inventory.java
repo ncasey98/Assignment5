@@ -1,3 +1,5 @@
+// Nora Casey 17773075
+
 import java.util.*;
 
 public class Inventory {
@@ -52,8 +54,29 @@ public class Inventory {
 		return items;
 	}
 	
-	// Remove item from inventory when it is added to cart
+	// Print inventory
+	public static void printInventory() {
+		for (Inventory item : items) {
+			System.out.println(item.toString());
+		}
+	}
 	
+	// Remove item from inventory when it is added to cart
+	public static int removeItem(int wanted, int quantity, String name) {
+		// Check if there is enough stock to put into shopping cart
+		if (quantity <= items.get(wanted).getQuantity()) {
+			// if there is stock, remove requested from inventory
+			items.get(wanted).setQuantity(items.get(wanted).getQuantity() - quantity);
+			return quantity;
+		} else {
+			// Not enough inventory in stock, add what is in stock to cart and 
+			// print error message
+			int wantedQuantity = items.get(wanted).getQuantity();
+			items.get(wanted).setQuantity(0);
+			System.out.println("Cannot add " +quantity+ " " + items.get(wanted).getItemName() + " to" + name+"'s");
+			return wantedQuantity;
+		}
+	}
 	
 	// Add item back to inventory when it is removed from a shopping cart
 	public void addItem(int name, int quantity) {

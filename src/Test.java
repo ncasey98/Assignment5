@@ -1,3 +1,8 @@
+// Nora Casey 17773075
+
+// NB ** Could not get program working - Throwing exception at line 16 for the initializing of Inventory
+// list, therefore could not inclue screenshots of testing 
+
 import java.util.List;
 
 public class Test {
@@ -8,6 +13,7 @@ public class Test {
 		ShoppingCart cart1 = new ShoppingCart("Nora", "30/10/2019");
 		ShoppingCart cart2 = new ShoppingCart("Casey", "04/05/2020");
 		
+		// List<Inventory> items = new List<Inventory>
 		List<Inventory> items = null;
 		// Add items to Inventory list
 		items.add(new Inventory("1000", "Apple", 30, 2.50));
